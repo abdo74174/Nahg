@@ -1,0 +1,199 @@
+:root {
+  --navy: #0b1220;
+  --navy2: #111827;
+  --navy3: #1e293b;
+  --indigo: #4f46e5;
+  --indigoh: #4338ca;
+  --indigos: #eef2ff;
+  --slate: #64748b;
+  --slatel: #94a3b8;
+  --slatexl: #cbd5e1;
+  --white: #ffffff;
+  --off: #f8fafc;
+  --border: #e2e8f0;
+  --f: 'Cairo', sans-serif;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--f);
+  background: var(--white);
+  color: var(--navy);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--indigo);
+  border-radius: 4px;
+}
+
+/* ── UTILS ── */
+.container {
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: var(--gap);
+}
+
+.section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.section-alt {
+  background: var(--off);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  background: var(--indigos);
+  border-radius: 99px;
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--indigo);
+  flex-shrink: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--f);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--r-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.2s;
+}
+
+.btn:hover::after {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.btn-primary {
+  background: var(--indigo);
+  color: #fff;
+  border-color: var(--indigo);
+}
+
+.btn-primary:hover {
+  background: var(--indigoh);
+  border-color: var(--indigoh);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--slatel);
+  color: var(--indigo);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-lg {
+  padding: 0.9rem 2.25rem;
+  font-size: 1rem;
+  border-radius: var(--r-md);
+}
+
+.btn-sm {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
+}

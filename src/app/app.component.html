@@ -1,0 +1,493 @@
+<!-- NAVBAR -->
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">نَهْـ<span>ج</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#products">منتجاتنا</a></li>
+      <li><a href="#process">آلية العمل</a></li>
+      <li><a href="#why-us">لماذا نحن</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://wa.me/201125411335?text=أريد%20استشارة%20سريعة" target="_blank"
+        class="btn btn-outline btn-sm">واتساب سريع</a>
+      <a href="https://wa.me/201125411335?text=أريد%20طلب%20استشارة%20مجانية%20بخصوص%20مشروعي" target="_blank"
+        class="btn btn-primary btn-sm">طلب استشارة مجانية</a>
+    </div>
+    <button class="ham-btn" [class.open]="isMenuOpen" (click)="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-drawer" [class.open]="isMenuOpen">
+  <a href="#services" (click)="closeMenu()">خدماتنا</a>
+  <a href="#products" (click)="closeMenu()">منتجاتنا</a>
+  <a href="#process" (click)="closeMenu()">آلية العمل</a>
+  <a href="#why-us" (click)="closeMenu()">لماذا نحن</a>
+  <a href="#contact" class="btn btn-primary" (click)="closeMenu()">طلب عرض سعر</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="eyebrow">شريكك التقني الموثوق</div>
+      <h1>نحوّل أعمالك إلى<br><em>منظومة رقمية ذكية</em></h1>
+      <p class="hero-desc">{{ typedText }}<span class="typed-cursor"></span></p>
+      <div class="hero-btns">
+        <a href="https://wa.me/201125411335?text=أريد%20طلب%20استشارة%20مجانية%20بخصوص%20مشروعي" target="_blank"
+          class="btn btn-primary btn-lg">طلب استشارة مجانية ←</a>
+        <a href="#products" class="btn btn-outline btn-lg">استعرض الحلول</a>
+      </div>
+      <div class="hero-trust">
+        <div class="ht-item">
+          <span class="ht-num">{{ stats.devs.prefix }}{{ stats.devs.current }}{{ stats.devs.suffix }}</span>
+          <span class="ht-label">نمو استراتيجي</span>
+        </div>
+        <div class="ht-item">
+          <span class="ht-num">{{ stats.countries.prefix }}{{ stats.countries.current }}{{ stats.countries.suffix
+            }}</span>
+          <span class="ht-label">دعم فني متواصل</span>
+        </div>
+        <div class="ht-item">
+          <span class="ht-num">{{ stats.satisfaction.prefix }}{{ stats.satisfaction.current }}{{
+            stats.satisfaction.suffix }}</span>
+          <span class="ht-label">نتائج مضمونة</span>
+        </div>
+        <div class="ht-item">
+          <span class="ht-num">{{ stats.years.prefix }}{{ stats.years.current }}{{ stats.years.suffix }}</span>
+          <span class="ht-label">خبرة تقنية واسعة</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard visual -->
+    <div class="hero-visual">
+      <div class="hv-wrap">
+        <div class="hv-header">
+          <span class="hv-title-g">لوحة تحكم الأعمال</span>
+          <span class="hv-badge">مباشر الآن</span>
+        </div>
+        <div class="hv-kpis">
+          <div class="kpi">
+            <div class="kpi-val">أقل من ٣٠ د</div>
+            <div class="kpi-lbl">وقت الاستجابة</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-val">١٠٠٪</div>
+            <div class="kpi-lbl">الالتزام بالقيمة</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-val">١٠٠٪</div>
+            <div class="kpi-lbl">جودة الأداء</div>
+          </div>
+        </div>
+        <div class="hv-chart">
+          <div class="chart-row">
+            <span class="chart-lbl">المبيعات</span>
+            <div class="chart-track">
+              <div class="chart-fill" [class.animated]="chartsAnimated" style="--w: 82%"></div>
+            </div>
+            <span class="chart-pct">٨٢٪</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-lbl">الكفاءة</span>
+            <div class="chart-track">
+              <div class="chart-fill" [class.animated]="chartsAnimated" style="--w: 91%"></div>
+            </div>
+            <span class="chart-pct">٩١٪</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-lbl">الأتمتة</span>
+            <div class="chart-track">
+              <div class="chart-fill" [class.animated]="chartsAnimated" style="--w: 67%"></div>
+            </div>
+            <span class="chart-pct">٦٧٪</span>
+          </div>
+        </div>
+        <div class="hv-footer">
+          <span class="hv-dot-live"></span>
+          البيانات تُحدَّث لحظياً — معالجة ٣٠ طلب/يوم
+        </div>
+      </div>
+      <div class="hv-float pos-a"><span class="float-icon">⚡</span>نمو سريع</div>
+      <div class="hv-float pos-b"><span class="float-icon">🤖</span>ذكاء اصطناعي</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS BAR -->
+<section class="clients-bar">
+  <div class="container" style="text-align: center;">
+    <p class="clients-label">نحن نعمل بفخر في منطقة الخليج العربي ومصر</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="sec-header reveal" [class.visible]="reveals['services']" data-reveal-id="services">
+      <div class="eyebrow">ماذا نقدم</div>
+      <h2 class="sec-title">كيف نساعدك على تطوير أعمالك</h2>
+      <p class="sec-sub">نركز على القيمة الحقيقية والنمو المستدام لشركتك ومنتجاتك.</p>
+    </div>
+    <div class="grid-3">
+      <div class="svc-card reveal" [class.visible]="reveals['svc1']" data-reveal-id="svc1">
+        <div class="svc-icon">📈</div>
+        <h3>استراتيجية نمو الأعمال</h3>
+        <p>نحلل وضعك الحالي ونرسم خارطة طريق تقنية تضمن تفوقك في السوق وزيادة حصتك السوقية.</p>
+      </div>
+      <div class="svc-card reveal" [class.visible]="reveals['svc2']" data-reveal-id="svc2"
+        style="transition-delay: .08s">
+        <div class="svc-icon">🚀</div>
+        <h3>تطوير وتحسين المنتجات</h3>
+        <p>لا نبني فقط؛ بل نحسن منتجك الحالي ليكون أكثر فاعلية، وجاذبية للمستخدمين، وربحية للشركة.</p>
+      </div>
+      <div class="svc-card reveal" [class.visible]="reveals['svc3']" data-reveal-id="svc3"
+        style="transition-delay: .16s">
+        <div class="svc-icon">⚙️</div>
+        <h3>تحسين كفاءة التشغيل</h3>
+        <p>نعيد هندسة عملياتك الداخلية لتقليل الهدر وزيادة سرعة التنفيذ من خلال حلول ذكية.</p>
+      </div>
+      <div class="svc-card reveal" [class.visible]="reveals['svc4']" data-reveal-id="svc4"
+        style="transition-delay: .24s">
+        <div class="svc-icon">☁️</div>
+        <h3>استراتيجية البنية التحتية</h3>
+        <p>نصمم بنية سحابية مرنة وقابلة للتوسع تضمن استدامة أعمالك ونموها دون عوائق تقنية.</p>
+      </div>
+      <div class="svc-card reveal" [class.visible]="reveals['svc5']" data-reveal-id="svc5"
+        style="transition-delay: .32s">
+        <div class="svc-icon">📊</div>
+        <h3>ذكاء الأعمال والبيانات</h3>
+        <p>نحول بياناتك إلى رؤى استراتيجية تساعدك في اتخاذ قرارات مدروسة تزيد من ربحية شركتك.</p>
+      </div>
+      <div class="svc-card reveal" [class.visible]="reveals['svc6']" data-reveal-id="svc6"
+        style="transition-delay: .40s">
+        <div class="svc-icon">🔗</div>
+        <h3>تكامل المنظومة الرقمية</h3>
+        <p>نربط جميع أدواتك وأنظمتك في بيئة واحدة متكاملة ترفع من كفاءة فريقك وتناسق عملياتك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="section-alt" style="padding-block: 0">
+  <div class="container" style="padding-block: clamp(3rem, 5vw, 4.5rem)">
+    <div class="stats-grid reveal" [class.visible]="reveals['stats']" data-reveal-id="stats">
+      <div class="stat-cell">
+        <div class="stat-num">+<span>15</span></div>
+        <div class="stat-desc">نمو استراتيجي محقق</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num"><span>99</span>٪</div>
+        <div class="stat-desc">التزام كامل بأعلى معايير الجودة</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num"><span>3</span>×</div>
+        <div class="stat-desc">تسليم أسرع بمساعدة الذكاء الاصطناعي</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">-<span>25</span>٪</div>
+        <div class="stat-desc">متوسط تخفيض تكاليف التشغيل</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="sec-header reveal" [class.visible]="reveals['productsHeader']" data-reveal-id="productsHeader">
+      <div class="eyebrow">حلولنا الاستراتيجية</div>
+      <h2 class="sec-title">منتجات ذكاء اصطناعي رائدة</h2>
+      <p class="sec-sub">نحن نطور حلولاً ذكية تسبق زمنها لتحسين أداء أعمالك.</p>
+    </div>
+    <div class="grid-2">
+      <div class="prod-card is-soon reveal" [class.visible]="reveals['prod1']" data-reveal-id="prod1">
+        <span class="soon-badge">قريباً</span>
+        <div class="prod-vis">
+          <div class="mini-dash">
+            <div class="md-row"><span class="md-circle md-c1"></span>
+              <div class="md-line hl"></div>
+              <div class="md-line short"></div>
+            </div>
+            <div class="md-bars">
+              <div class="md-bar" style="height: 55%; animation-delay: .1s"></div>
+              <div class="md-bar hl" style="height: 80%; animation-delay: .2s"></div>
+              <div class="md-bar" style="height: 40%; animation-delay: .3s"></div>
+              <div class="md-bar hl" style="height: 95%; animation-delay: .4s"></div>
+              <div class="md-bar" style="height: 60%; animation-delay: .5s"></div>
+              <div class="md-bar" style="height: 45%; animation-delay: .6s"></div>
+              <div class="md-bar hl" style="height: 70%; animation-delay: .7s"></div>
+            </div>
+            <div class="md-row"><span class="md-circle md-c2"></span>
+              <div class="md-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="prod-body"><span class="prod-tag">ذكاء تنافسي</span>
+          <h3>نظام تحسين سمعة الفنادق والمنشآت</h3>
+          <p>حلول ذكية لرصد وتحليل آراء الضيوف وتحسين جودة الخدمة لرفع تصنيف المنشأة وزيادة الحجوزات.</p><a
+            href="#contact" class="prod-link">انضم لقائمة الانتظار ←</a>
+        </div>
+      </div>
+
+      <div class="prod-card is-soon reveal" [class.visible]="reveals['prod2']" data-reveal-id="prod2"
+        style="transition-delay: .1s">
+        <span class="soon-badge">قريباً</span>
+        <div class="prod-vis prod-vis-alt">
+          <div class="mini-dash">
+            <div class="md-row"><span class="md-circle md-c3"></span>
+              <div class="md-line hl"></div>
+            </div>
+            <div class="md-grid">
+              <div class="md-cell hl"></div>
+              <div class="md-cell"></div>
+              <div class="md-cell hl"></div>
+              <div class="md-cell"></div>
+            </div>
+            <div class="md-row">
+              <div class="md-line short"></div>
+              <div class="md-line hl"></div>
+            </div>
+          </div>
+        </div>
+        <div class="prod-body"><span class="prod-tag">خدمة العملاء</span>
+          <h3>وكيل الخدمة الذكي المستقل</h3>
+          <p>وكيل ذكاء اصطناعي متطور يتفاعل مع عملائك بلغة طبيعية ويحل مشكلاتهم بسرعة ودقة على مدار الساعة.</p>
+          <a href="#contact" class="prod-link">انضم لقائمة الانتظار ←</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal center" style="margin-top: 4rem; text-align: center;" [class.visible]="reveals['cta']">
+      <h3 style="font-size: 1.5rem; color: var(--navy);">يمكننا تصميم أي نظام تحتاجه شركتك خصيصاً لك</h3>
+      <p style="color: var(--slate); margin-top: 1rem; max-width: 600px; margin-inline: auto;">نحن شركاؤك في النجاح،
+        نصمم الحلول التي تناسب تطلعاتك وتدفع بأعمالك للأمام في منطقة الخليج العربي.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="cs-section">
+  <div class="cs-inner">
+    <div class="cs-icon-box">🤖</div>
+    <div class="eyebrow" style="background: rgba(79, 70, 229, 0.18); color: #a5b4fc; margin-bottom: 1rem">قريباً</div>
+    <h2 style="color: #fff">وكيل الخدمة الذكي المستقل</h2>
+    <p>وكيل ذكاء اصطناعي يتعامل مع عملائك، يحل مشكلاتهم، وينفذ المهام التشغيلية — بدون تدخل بشري، على مدار الساعة.</p>
+    <div class="cs-tags">
+      <span class="cs-tag">تنفيذ مستقل بالكامل</span>
+      <span class="cs-tag">دعم متعدد القنوات</span>
+      <span class="cs-tag">تكامل مع جميع الأنظمة</span>
+      <span class="cs-tag">تعلم تلقائي مستمر</span>
+    </div>
+    <a href="#contact" class="btn btn-primary btn-lg">انضم لقائمة الانتظار المبكر ←</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="sec-header center reveal" [class.visible]="reveals['processHeader']" data-reveal-id="processHeader">
+      <div class="eyebrow">منهجية النمو</div>
+      <h2 class="sec-title">رحلتنا نحو تطوير أعمالك</h2>
+      <p class="sec-sub">نتبع مساراً استراتيجياً يبدأ بفهم التحديات وينتهي بتحقيق النتائج.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step-card reveal" [class.visible]="reveals['step1']" data-reveal-id="step1">
+        <div class="step-num">١</div>
+        <h3>التشخيص الاستراتيجي</h3>
+        <p>نغوص في تفاصيل عملك لتحديد نقاط القوة وفرص التحسين الحقيقية.</p>
+      </div>
+      <div class="step-card reveal" [class.visible]="reveals['step2']" data-reveal-id="step2"
+        style="transition-delay: .12s">
+        <div class="step-num">٢</div>
+        <h3>هندسة الحلول</h3>
+        <p>نصمم الحل الأمثل الذي يوازن بين الاحتياجات التقنية وأهداف النمو التجاري.</p>
+      </div>
+      <div class="step-card reveal" [class.visible]="reveals['step3']" data-reveal-id="step3"
+        style="transition-delay: .24s">
+        <div class="step-num">٣</div>
+        <h3>التنفيذ والتحسين</h3>
+        <p>نطبق الحلول تدريجياً مع مراقبة الأداء وضمان تحقيق القيمة المرجوة من اليوم الأول.</p>
+      </div>
+      <div class="step-card reveal" [class.visible]="reveals['step4']" data-reveal-id="step4"
+        style="transition-delay: .36s">
+        <div class="step-num">٤</div>
+        <h3>التوسع والاستدامة</h3>
+        <p>نضمن استمرارية النجاح من خلال دعم مستمر وتطوير دائم يواكب نمو شركتك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section section-alt" id="why-us">
+  <div class="container">
+    <div class="sec-header reveal" [class.visible]="reveals['whyHeader']" data-reveal-id="whyHeader">
+      <div class="eyebrow">لماذا نكسجن</div>
+      <h2 class="sec-title">لماذا نحن شريكك المثالي للنمو</h2>
+      <p class="sec-sub">نحن لا نبيع أدوات، نحن نبني مستقبلاً أفضل لشركتك.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal" [class.visible]="reveals['trust1']" data-reveal-id="trust1">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>تسليم في الموعد المحدد</h3>
+          <p>نلتزم بأعلى معايير الجودة والاحترافية في كل ما نقدمه.</p>
+        </div>
+      </div>
+      <div class="trust-card reveal" [class.visible]="reveals['trust2']" data-reveal-id="trust2"
+        style="transition-delay: .08s">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>فريق عربي متخصص</h3>
+          <p>فريقنا يفهم البيئة التجارية في مصر والسعودية والإمارات.</p>
+        </div>
+      </div>
+      <div class="trust-card reveal" [class.visible]="reveals['trust3']" data-reveal-id="trust3"
+        style="transition-delay: .16s">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>أمان بمعايير المؤسسات</h3>
+          <p>بنية تحتية موافقة لمعايير ISO 27001 وسياسات ZATCA.</p>
+        </div>
+      </div>
+      <div class="trust-card reveal" [class.visible]="reveals['trust4']" data-reveal-id="trust4"
+        style="transition-delay: .24s">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>شفافية كاملة في التكلفة</h3>
+          <p>سعر واضح من البداية بدون رسوم مخفية.</p>
+        </div>
+      </div>
+      <div class="trust-card reveal" [class.visible]="reveals['trust5']" data-reveal-id="trust5"
+        style="transition-delay: .32s">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>حماية الملكية الفكرية</h3>
+          <p>جميع ما نبنيه لك هو ملكك بالكامل — كود المصدر والوثائق.</p>
+        </div>
+      </div>
+      <div class="trust-card reveal" [class.visible]="reveals['trust6']" data-reveal-id="trust6"
+        style="transition-delay: .40s">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>دعم فني 6/7 بالعربية</h3>
+          <p>دعم فني باللغة العربية من متخصصين يعرفون نظامك جيداً.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner reveal" [class.visible]="reveals['cta']" data-reveal-id="cta">
+    <div class="eyebrow" style="background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, .9)">ابدأ اليوم</div>
+    <h2>جاهز لتحويل أعمالك رقمياً؟</h2>
+    <p>احجز استشارة مجانية مع فريقنا التقني — نحلل وضعك الحالي ونقترح الحل الأمثل.</p>
+    <div class="cta-btns">
+      <a href="mailto:hello@nexgen.ai" class="btn btn-primary btn-lg">طلب استشارة مجانية ←</a>
+      <a href="tel:+200000000000" class="btn btn-outline-white btn-lg">اتصل بنا مباشرة</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- CONTACT FORM -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="sec-header center reveal" [class.visible]="reveals['whyHeader']">
+      <div class="eyebrow">تواصل معنا</div>
+      <h2 class="sec-title">ابدأ رحلة النجاح اليوم</h2>
+      <p class="sec-sub">أخبرنا عن مشروعك، وسنقوم بتحويله إلى واقع ملموس.</p>
+    </div>
+
+    <div class="contact-box reveal" [class.visible]="reveals['whyHeader']">
+      <form (ngSubmit)="sendToWhatsApp()" #f="ngForm" class="contact-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>الاسم بالكامل</label>
+            <input type="text" name="name" [(ngModel)]="contactForm.name" placeholder="مثال: أحمد محمد" required>
+          </div>
+          <div class="form-group">
+            <label>نوع المشروع</label>
+            <select name="project" [(ngModel)]="contactForm.project" required>
+              <option value="" disabled selected>اختر نوع المشروع</option>
+              <option value="نظام إدارة فنادق">نظام إدارة فنادق</option>
+              <option value="وكيل ذكاء اصطناعي">وكيل ذكاء اصطناعي</option>
+              <option value="تطوير منصة رقمية">تطوير منصة رقمية</option>
+              <option value="استشارة استراتيجية">استشارة استراتيجية</option>
+              <option value="آخر">آخر</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>تفاصيل المشروع</label>
+          <textarea name="message" [(ngModel)]="contactForm.message" rows="4" placeholder="كيف يمكننا مساعدتك؟"
+            required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!f.valid">
+          إرسال عبر واتساب 🚀
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <span class="nav-logo">نَهْـ<span>ج</span></span>
+      <p>شريكك الاستراتيجي لتطوير الأعمال وتحسين المنتجات الرقمية في مصر والخليج العربي.</p>
+      <div class="f-socials">
+        <a href="https://wa.me/201125411335" target="_blank" class="f-soc">💬</a>
+        <span style="font-size: 0.9rem; margin-right: 0.5rem; color: var(--navy);">واتساب: 01125411335</span>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>الخدمات</h4>
+      <ul>
+        <li><a href="#">استراتيجية النمو</a></li>
+        <li><a href="#">تحسين المنتجات</a></li>
+        <li><a href="#">تحسين العمليات</a></li>
+        <li><a href="#">ذكاء الأعمال</a></li>
+        <li><a href="#">تكامل المنظومة</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>المنتجات</h4>
+      <ul>
+        <li><a href="#">منصة الفنادق</a></li>
+        <li><a href="#">منظومة الأتمتة</a></li>
+        <li><a href="#">لوحة التحليلات</a></li>
+        <li><a href="#">الوكيل الذكي (قريباً)</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>الشركة</h4>
+      <ul>
+        <li><a href="#">من نحن</a></li>
+        <li><a href="#">دراسات الحالة</a></li>
+        <li><a href="#">المدونة التقنية</a></li>
+        <li><a href="#">الوظائف</a></li>
+        <li><a href="mailto:hello@nexgen.ai">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 نَهْج. جميع الحقوق محفوظة.</p>
+    <div class="footer-bottom-links"><a href="https://wa.me/201125411335" target="_blank">تواصل عبر واتساب</a><a
+        href="#">سياسة الخصوصية</a><a href="#">الشروط والأحكام</a><a href="mailto:hello@nexgen.ai">hello@nexgen.ai</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/201125411335?text=أنا%20من%20الموقع%20الإلكتروني،%20أرغب%20في%20بدء%20مشروع%20جديد"
+  class="whatsapp-float" target="_blank">
+  <span class="wa-icon">💬</span>
+  <span class="wa-text">تواصل معنا</span>
+</a>
